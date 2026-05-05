@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hizmetler — Tankut Kayra Özerk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-title-key="meta.titleServices">
+
+<div class="orb" id="orb"></div>
+
+<nav>
+  <a href="main.html" class="nav-logo">T<span>K</span>Ö</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="main.html" data-i18n="nav.main">Anasayfa</a></li>
+      <li><a href="services.html" class="active" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+
+    <div class="lang-switcher">
+      <button class="lang-trigger" type="button" data-i18n-attr="aria-label:nav.langAria" aria-haspopup="listbox">
+        <span class="lang-current-flag">🇹🇷</span>
+        <span class="lang-current">TR</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-menu" role="listbox">
+        <li class="lang-option active" role="option" data-lang="tr"><span class="flag">🇹🇷</span> TR</li>
+        <li class="lang-option" role="option" data-lang="en"><span class="flag">🇬🇧</span> EN</li>
+      </ul>
+    </div>
+
+    <button class="theme-toggle" type="button" data-i18n-attr="aria-label:nav.themeAria">
+      <span class="toggle-slider" id="toggle-slider">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="services-hero">
+    <div class="section-label center" data-i18n="services.label">Sunduklarım</div>
+    <h2 class="section-title" data-i18n="services.title">Hizmetler & Uzmanlık</h2>
+    <p data-i18n="services.intro"></p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card reveal" style="--reveal-delay:0s">
+      <div><span class="service-badge core" data-i18n="services.badgeCore">Temel</span></div>
+      <div class="service-icon">⚙️</div>
+      <h3 data-i18n="services.c1Title"></h3>
+      <p data-i18n="services.c1Body"></p>
+      <div class="service-tags">
+        <span class="tag">CODESYS</span>
+        <span class="tag">Modbus</span>
+        <span class="tag">HMI Development</span>
+        <span class="tag">PLC Integration</span>
+        <span class="tag">Industrial Protocols</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal" style="--reveal-delay:0.1s">
+      <div><span class="service-badge core" data-i18n="services.badgeCore">Temel</span></div>
+      <div class="service-icon">🖥️</div>
+      <h3 data-i18n="services.c2Title"></h3>
+      <p data-i18n="services.c2Body"></p>
+      <div class="service-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">PHP</span>
+        <span class="tag">React</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">REST APIs</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal" style="--reveal-delay:0.2s">
+      <div><span class="service-badge core" data-i18n="services.badgeCore">Temel</span></div>
+      <div class="service-icon">🔌</div>
+      <h3 data-i18n="services.c3Title"></h3>
+      <p data-i18n="services.c3Body"></p>
+      <div class="service-tags">
+        <span class="tag">IoT</span>
+        <span class="tag">SQL</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Real-Time Data</span>
+        <span class="tag">Node.js</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal" style="--reveal-delay:0.3s">
+      <div><span class="service-badge core" data-i18n="services.badgeCore">Temel</span></div>
+      <div class="service-icon">🤖</div>
+      <h3 data-i18n="services.c4Title"></h3>
+      <p data-i18n="services.c4Body"></p>
+      <div class="service-tags">
+        <span class="tag">n8n</span>
+        <span class="tag">AI Agents</span>
+        <span class="tag">Apache Kafka</span>
+        <span class="tag">Cassandra</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+
+    <div class="service-card reveal" style="--reveal-delay:0.4s">
+      <div><span class="service-badge research" data-i18n="services.badgeResearch">Araştırma</span></div>
+      <div class="service-icon">📊</div>
+      <h3 data-i18n="services.c5Title"></h3>
+      <p data-i18n="services.c5Body"></p>
+      <div class="service-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Research</span>
+      </div>
+    </div>
+
+    <div class="service-card featured reveal" style="--reveal-delay:0.5s">
+      <div><span class="service-badge new" data-i18n="services.badgeNew">✨ Yeni</span></div>
+      <div class="service-icon">🎬</div>
+      <h3 data-i18n="services.c6Title"></h3>
+      <p data-i18n="services.c6Body"></p>
+      <div class="service-tags">
+        <span class="tag">AI Video Generation</span>
+        <span class="tag">Content Strategy</span>
+        <span class="tag">Short-Form Video</span>
+        <span class="tag">Social Media</span>
+        <span class="tag">Brand Content</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ai-video-showcase">
+    <div class="showcase-inner reveal reveal-scale">
+      <div>
+        <h3 class="showcase-title">
+          <span data-i18n="services.showcaseT1">AI Üretimli</span><br>
+          <span data-i18n="services.showcaseT2">Video İçerik</span><br>
+          <span data-i18n="services.showcaseT3">Sosyal Medya İçin</span>
+        </h3>
+        <p class="showcase-desc" data-i18n="services.showcaseDesc"></p>
+        <p class="showcase-desc dim" data-i18n="services.showcaseDescDim"></p>
+        <a href="contact.html" class="btn-primary" data-i18n="services.showcaseCta">Birlikte Çalışalım</a>
+      </div>
+      <div class="video-grid">
+        <div class="video-thumb">
+          <video data-src="contents/videos/reels1.mov"
+                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"
+                 muted loop playsinline preload="none"
+                 onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0;"></video>
+          <div class="play-icon" style="position:relative;z-index:2;">▶</div>
+        </div>
+        <div class="video-thumb">
+          <video data-src="contents/videos/reels2.mov"
+                 style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;"
+                 muted loop playsinline preload="none"
+                 onmouseenter="this.play()" onmouseleave="this.pause();this.currentTime=0;"></video>
+          <div class="play-icon" style="position:relative;z-index:2;">▶</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span data-i18n="footer.rights">© 2025 Tankut Kayra Özerk</span>
+  <span class="accent-text" data-i18n="footer.tagline">// Hassasiyetle inşa edildi</span>
+  <span data-i18n="footer.location">İstanbul, Türkiye</span>
+</footer>
+
+<script src="translations.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

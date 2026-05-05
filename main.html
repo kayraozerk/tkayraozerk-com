@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tankut Kayra Özerk — Portföy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-title-key="meta.titleMain">
+
+<div class="splash" id="splash">
+  <div class="splash-inner">
+    <div class="splash-logo">TKÖ</div>
+    <div class="splash-name">Tankut Kayra Özerk</div>
+    <div class="splash-tagline" data-i18n="splash.tagline">Mühendis · Yapımcı · Yaratıcı</div>
+    <div class="splash-hint" data-i18n="splash.hint">girmek için herhangi bir yere tıklayın</div>
+  </div>
+</div>
+
+<div class="orb" id="orb"></div>
+
+<nav>
+  <a href="main.html" class="nav-logo">T<span>K</span>Ö</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="main.html" class="active" data-i18n="nav.main">Anasayfa</a></li>
+      <li><a href="services.html" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+
+    <div class="lang-switcher">
+      <button class="lang-trigger" type="button" data-i18n-attr="aria-label:nav.langAria" aria-haspopup="listbox">
+        <span class="lang-current-flag">🇹🇷</span>
+        <span class="lang-current">TR</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-menu" role="listbox">
+        <li class="lang-option active" role="option" data-lang="tr"><span class="flag">🇹🇷</span> TR</li>
+        <li class="lang-option" role="option" data-lang="en"><span class="flag">🇬🇧</span> EN</li>
+      </ul>
+    </div>
+
+    <button class="theme-toggle" type="button" data-i18n-attr="aria-label:nav.themeAria">
+      <span class="toggle-slider" id="toggle-slider">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag" data-i18n="hero.tag">Fikirleri etkiye dönüştürmek</div>
+      <div class="welcome-line">
+        <span class="typed-text" id="typed"></span><span class="cursor-blink"></span>
+      </div>
+      <h1 class="hero-name">Tankut Kayra<br><span class="accent">Özerk</span></h1>
+      <p class="hero-title" data-i18n="hero.title">Bilgisayar Bilimleri & Mühendisliği · Endüstriyel Otomasyon · Full-Stack Geliştirme</p>
+      <p class="hero-bio" data-i18n="hero.bio"></p>
+      <div class="hero-ctas">
+        <a href="cv.html" class="btn-primary" data-i18n="hero.ctaCv">CV'mi Görüntüle</a>
+        <a href="contact.html" class="btn-ghost" data-i18n="hero.ctaContact">İletişime Geç</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="profile-stack">
+        <div class="profile-photo tl">
+          <img src="contents/photos/photo1.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          <div class="corner-deco tl-pos"></div>
+        </div>
+        <div class="profile-photo tr">
+          <img src="contents/photos/photo3.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          <div class="corner-deco tl-pos"></div>
+        </div>
+        <div class="profile-photo main">
+          <img src="contents/photos/main.jpeg" alt="Tankut Kayra Özerk" loading="eager" style="width:100%;height:100%;object-fit:cover;">
+          <div class="corner-deco tl-pos"></div>
+          <div class="corner-deco br-pos"></div>
+        </div>
+        <div class="profile-photo br">
+          <img src="contents/photos/photo2.jpeg" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+          <div class="corner-deco br-pos"></div>
+        </div>
+        <div class="floating-badge b1" data-i18n="hero.badge1">⚡ Birlikte İnşa Edelim</div>
+        <div class="floating-badge b2" data-i18n="hero.badge2">📍 İstanbul → Dünya</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-row reveal">
+    <div class="stat-item">
+      <div class="stat-number">4+</div>
+      <div class="stat-label" data-i18n="stats.years">Yıllık Yazılım Tecrübesi</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6K+</div>
+      <div class="stat-label" data-i18n="stats.users">Projelerimdeki Kullanıcı</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">10+</div>
+      <div class="stat-label" data-i18n="stats.projects">Tamamlanmış Proje</div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="section-label reveal" data-i18n="about.label">Ben Kimim</div>
+    <h2 class="section-title reveal" data-i18n-html="about.title">Eğitimli mühendis,<br>içgüdüsel yapımcı.</h2>
+
+    <div class="about-grid">
+      <div class="about-text reveal reveal-left">
+        <p data-i18n="about.p1"></p>
+        <p data-i18n="about.p2"></p>
+        <p data-i18n="about.p3"></p>
+      </div>
+
+      <div class="motive-cards">
+        <div class="motive-card reveal reveal-right" style="--reveal-delay:0.05s">
+          <div class="motive-icon">🏭</div>
+          <h4 data-i18n="about.m1Title"></h4>
+          <p data-i18n="about.m1Body"></p>
+        </div>
+        <div class="motive-card reveal reveal-right" style="--reveal-delay:0.15s">
+          <div class="motive-icon">🚀</div>
+          <h4 data-i18n="about.m2Title"></h4>
+          <p data-i18n="about.m2Body"></p>
+        </div>
+        <div class="motive-card reveal reveal-right" style="--reveal-delay:0.25s">
+          <div class="motive-icon">🧠</div>
+          <h4 data-i18n="about.m3Title"></h4>
+          <p data-i18n="about.m3Body"></p>
+        </div>
+        <div class="motive-card reveal reveal-right" style="--reveal-delay:0.35s">
+          <div class="motive-icon">📐</div>
+          <h4 data-i18n="about.m4Title"></h4>
+          <p data-i18n="about.m4Body"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label reveal" data-i18n="glimpses.label">Anlar</div>
+    <h2 class="section-title reveal" data-i18n-html="glimpses.title">Klavyeden uzakta<br>birkaç an.</h2>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal reveal-scale" data-stagger>
+        <img src="contents/photos/sailing_photo.JPG" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </div>
+      <div class="gallery-item wide reveal reveal-scale" data-stagger>
+        <img src="contents/photos/uniDays_photo.jpeg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </div>
+      <div class="gallery-item reveal reveal-scale" data-stagger>
+        <img src="contents/photos/work_photo.png" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </div>
+      <div class="gallery-item reveal reveal-scale" data-stagger>
+        <img src="contents/photos/travel_photo.png" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </div>
+      <div class="gallery-item wide reveal reveal-scale" data-stagger>
+        <img src="contents/photos/sw.jpeg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span data-i18n="footer.rights">© 2025 Tankut Kayra Özerk</span>
+  <span class="accent-text" data-i18n="footer.tagline">// Hassasiyetle inşa edildi</span>
+  <span data-i18n="footer.location">İstanbul, Türkiye</span>
+</footer>
+
+<script src="translations.js"></script>
+<script src="app.js"></script>
+
+<script>
+  /* Page-specific: typewriter that re-keys to the active language */
+  (() => {
+    const typed = document.getElementById('typed');
+    if (!typed) return;
+    let messages = [];
+    let msgIdx = 0, charIdx = 0, deleting = false, timer = null;
+
+    const reload = () => {
+      const dict = window.TRANSLATIONS[window.App.I18n.current];
+      messages = (dict && dict.hero && dict.hero.typed) || [''];
+      msgIdx = 0; charIdx = 0; deleting = false;
+      typed.textContent = '';
+      clearTimeout(timer);
+      tick();
+    };
+
+    const tick = () => {
+      const current = messages[msgIdx] || '';
+      if (!deleting) {
+        typed.textContent = current.slice(0, charIdx + 1);
+        charIdx++;
+        if (charIdx === current.length) {
+          deleting = true;
+          timer = setTimeout(tick, 2000);
+          return;
+        }
+      } else {
+        typed.textContent = current.slice(0, charIdx - 1);
+        charIdx--;
+        if (charIdx === 0) {
+          deleting = false;
+          msgIdx = (msgIdx + 1) % messages.length;
+        }
+      }
+      timer = setTimeout(tick, deleting ? 40 : 80);
+    };
+
+    document.addEventListener('i18n:changed', reload);
+    reload();
+  })();
+
+  /* ── Gallery stagger observer ─────────────────────────────────────
+     Watches the grid container so all items animate as a coordinated
+     group regardless of scroll speed. Delays are applied dynamically
+     by index (110 ms apart) then cleaned up once the transition ends,
+     so hover effects are never delayed afterwards.
+  ──────────────────────────────────────────────────────────────── */
+  (() => {
+    const STEP_MS = 110;
+    const grid = document.querySelector('.gallery-grid');
+    if (!grid || window.App.prefersReducedMotion?.()) return;
+
+    const staggerObserver = new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      staggerObserver.unobserve(grid);
+
+      const items = Array.from(grid.querySelectorAll('.gallery-item[data-stagger]'));
+
+      items.forEach((item, i) => {
+        const delayMs = i * STEP_MS;
+
+        // Apply dynamic delay then reveal
+        item.style.transitionDelay = delayMs + 'ms';
+        item.classList.add('visible');
+
+        // Clean up the temporary delay once the longest-running transition
+        // on this element finishes, so subsequent hover transitions are instant.
+        item.addEventListener('transitionend', () => {
+          item.style.transitionDelay = '';
+        }, { once: true });
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    staggerObserver.observe(grid);
+  })();
+</script>
+</body>
+</html>

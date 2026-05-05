@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim — Tankut Kayra Özerk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-title-key="meta.titleContact">
+
+<div class="orb" id="orb"></div>
+
+<nav>
+  <a href="main.html" class="nav-logo">T<span>K</span>Ö</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="main.html" data-i18n="nav.main">Anasayfa</a></li>
+      <li><a href="services.html" data-i18n="nav.services">Hizmetler</a></li>
+      <li><a href="cv.html" data-i18n="nav.cv">CV</a></li>
+      <li><a href="contact.html" class="active" data-i18n="nav.contact">İletişim</a></li>
+    </ul>
+
+    <div class="lang-switcher">
+      <button class="lang-trigger" type="button" data-i18n-attr="aria-label:nav.langAria" aria-haspopup="listbox">
+        <span class="lang-current-flag">🇹🇷</span>
+        <span class="lang-current">TR</span>
+        <span class="lang-caret">▾</span>
+      </button>
+      <ul class="lang-menu" role="listbox">
+        <li class="lang-option active" role="option" data-lang="tr"><span class="flag">🇹🇷</span> TR</li>
+        <li class="lang-option" role="option" data-lang="en"><span class="flag">🇬🇧</span> EN</li>
+      </ul>
+    </div>
+
+    <button class="theme-toggle" type="button" data-i18n-attr="aria-label:nav.themeAria">
+      <span class="toggle-slider" id="toggle-slider">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="page">
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <div class="section-label" data-i18n="contact.label">Bağlantı Kuralım</div>
+      <h2>
+        <span data-i18n="contact.h2a">Aklında bir</span>
+        <span data-i18n="contact.h2b">proje</span>
+        <span data-i18n="contact.h2c">var mı?</span>
+      </h2>
+      <p data-i18n="contact.intro"></p>
+
+      <div class="contact-links">
+        <a href="mailto:kayraozerk3@gmail.com" class="contact-link reveal" style="--reveal-delay:0s">
+          <span class="contact-link-icon">✉️</span>
+          <div>
+            <span class="contact-link-label" data-i18n="contact.lEmail">E-posta</span>
+            <span class="contact-link-value">kayraozerk3@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/tkayraozerk" target="_blank" rel="noopener" class="contact-link reveal" style="--reveal-delay:0.1s">
+          <span class="contact-link-icon">💼</span>
+          <div>
+            <span class="contact-link-label" data-i18n="contact.lLinkedin">LinkedIn</span>
+            <span class="contact-link-value">linkedin.com/in/tkayraozerk</span>
+          </div>
+        </a>
+        <a href="https://github.com/kayraozerk" target="_blank" rel="noopener" class="contact-link reveal" style="--reveal-delay:0.2s">
+          <span class="contact-link-icon">🐙</span>
+          <div>
+            <span class="contact-link-label" data-i18n="contact.lGithub">GitHub</span>
+            <span class="contact-link-value">github.com/kayraozerk</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal reveal-right">
+      <div class="form-header">
+        <h3 data-i18n="contact.formH3">Mesaj Gönder</h3>
+        <p data-i18n="contact.formNote">// Doğrudan gönderilir — uygulama açılmaz</p>
+      </div>
+
+      <form id="contact-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="f-name" data-i18n="contact.fName">İsmin</label>
+            <input type="text" id="f-name" required
+                   data-i18n-attr="placeholder:contact.fNamePh">
+          </div>
+          <div class="form-group">
+            <label for="f-email" data-i18n="contact.fEmail">E-posta Adresin</label>
+            <input type="email" id="f-email" required
+                   data-i18n-attr="placeholder:contact.fEmailPh">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="f-subject" data-i18n="contact.fSubject">Konu</label>
+          <input type="text" id="f-subject"
+                 data-i18n-attr="placeholder:contact.fSubjectPh">
+        </div>
+
+        <div class="form-group">
+          <label for="f-message" data-i18n="contact.fMessage">Mesaj</label>
+          <textarea id="f-message" required
+                    data-i18n-attr="placeholder:contact.fMessagePh"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <span class="form-note" data-i18n="contact.sendNote">// Doğrudan gönderilir — uygulama açılmaz</span>
+          <button type="submit" class="submit-btn" id="submit-btn">
+            <span class="btn-spinner"></span><span data-i18n="contact.sendBtn">Mesaj Gönder →</span>
+          </button>
+        </div>
+
+        <div class="form-feedback" id="form-feedback">
+          <span class="form-feedback-icon" id="feedback-icon"></span>
+          <span id="feedback-text"></span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span data-i18n="footer.rights">© 2025 Tankut Kayra Özerk</span>
+  <span class="accent-text" data-i18n="footer.tagline">// Hassasiyetle inşa edildi</span>
+  <span data-i18n="footer.location">İstanbul, Türkiye</span>
+</footer>
+
+<script src="translations.js"></script>
+<script src="app.js"></script>
+
+<script>
+  /* Page-specific: contact form (EmailJS) — feedback strings come from i18n */
+  (() => {
+    if (!window.emailjs) return;
+    emailjs.init({ publicKey: 'Im1B7IKY_i4gZ6x8g' });
+
+    const SERVICE_ID  = 'service_pmyc2yz';
+    const TEMPLATE_ID = 'template_h4emx5s';
+    const EMAIL_RE    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    const fb       = document.getElementById('form-feedback');
+    const fbIcon   = document.getElementById('feedback-icon');
+    const fbText   = document.getElementById('feedback-text');
+    const form     = document.getElementById('contact-form');
+    const btn      = document.getElementById('submit-btn');
+
+    const t = (key) => {
+      const lang = window.App.I18n.current;
+      return key.split('.').reduce((a, k) => a && a[k], window.TRANSLATIONS[lang]) ?? '';
+    };
+
+    const showFeedback = (type, icon, text) => {
+      fb.className = 'form-feedback show ' + type;
+      fbIcon.textContent = icon;
+      fbText.textContent = text;
+    };
+    const hideFeedback = () => { fb.className = 'form-feedback'; };
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      hideFeedback();
+
+      const name    = document.getElementById('f-name').value.trim();
+      const email   = document.getElementById('f-email').value.trim();
+      const subject = document.getElementById('f-subject').value.trim() || 'Portfolio Contact';
+      const message = document.getElementById('f-message').value.trim();
+
+      if (!EMAIL_RE.test(email)) {
+        showFeedback('error', '✕', t('contact.errEmail'));
+        document.getElementById('f-email').focus();
+        return;
+      }
+
+      btn.classList.add('loading');
+
+      const fullMessage =
+        'From: ' + name + '\n' +
+        'Email: ' + email + '\n' +
+        'Subject: ' + subject + '\n' +
+        '─────────────────────\n' +
+        message;
+
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, {
+        from_name:  name,
+        from_email: email,
+        subject,
+        message:    fullMessage,
+        reply_to:   email,
+      })
+      .then(() => {
+        showFeedback('success', '✓', t('contact.okMsg'));
+        form.reset();
+      })
+      .catch((err) => {
+        const detail = err && err.text ? ' (' + err.text + ')' : '';
+        showFeedback('error', '✕', t('contact.errGeneric') + detail);
+      })
+      .finally(() => btn.classList.remove('loading'));
+    });
+  })();
+</script>
+</body>
+</html>
