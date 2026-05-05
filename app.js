@@ -139,7 +139,7 @@
   };
 
   /* ════════════════════════════════════════════════
-     3. SPLASH (only present on main.html)
+     3. SPLASH (only present on index.html)
      ════════════════════════════════════════════════ */
   const Splash = {
     init() {
