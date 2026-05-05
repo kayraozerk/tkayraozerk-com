@@ -172,7 +172,7 @@ window.TRANSLATIONS = {
       lLinkedin: "LinkedIn",
       lGithub: "GitHub",
       formH3: "Mesaj Gönder",
-      formNote: "// Doğrudan gönderilir — uygulama açılmaz",
+      formNote: "// Doğrudan gönderilir",
       fName: "İsmin",
       fEmail: "E-posta Adresin",
       fSubject: "Konu",
