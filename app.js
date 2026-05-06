@@ -268,6 +268,34 @@
   };
 
   /* ════════════════════════════════════════════════
+     8. HAMBURGER — mobile nav toggle
+     ════════════════════════════════════════════════ */
+  const Hamburger = {
+    init() {
+      const nav = $('nav');
+      const btn = $('.nav-hamburger');
+      if (!nav || !btn) return;
+
+      const close = () => {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      };
+
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const open = nav.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)) close();
+      });
+
+      $$('.nav-links a').forEach(a => a.addEventListener('click', close));
+    }
+  };
+
+  /* ════════════════════════════════════════════════
      BOOTSTRAP
      ════════════════════════════════════════════════ */
   const boot = () => {
@@ -279,6 +307,7 @@
     Reveal.init();
     Magnetic.init();
     LazyVideo.init();
+    Hamburger.init();
   };
 
   if (document.readyState === 'loading') {
