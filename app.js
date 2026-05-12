@@ -145,15 +145,17 @@
     init() {
       const splash = $('#splash');
       if (!splash) return;
+      let timer = null;
       const dismiss = () => {
+        if (timer) { clearTimeout(timer); timer = null; }
         splash.classList.add('hidden');
         sessionStorage.setItem('splashSeen', '1');
       };
       if (sessionStorage.getItem('splashSeen')) {
         splash.classList.add('hidden');
       } else {
-        splash.addEventListener('click', dismiss);
-        setTimeout(dismiss, 4200);
+        splash.addEventListener('click', dismiss, { once: true });
+        timer = setTimeout(dismiss, 4200);
       }
     }
   };
@@ -221,11 +223,11 @@
             const y = (e.clientY - r.top   - r.height / 2) * 0.18;
             el.style.setProperty('--mx', `${x}px`);
             el.style.setProperty('--my', `${y}px`);
-          });
+          }, { passive: true });
           el.addEventListener('mouseleave', () => {
             el.style.setProperty('--mx', '0px');
             el.style.setProperty('--my', '0px');
-          });
+          }, { passive: true });
         });
     }
   };
@@ -279,7 +281,7 @@
         v.addEventListener('play',  () => thumb.classList.add('is-playing'));
         v.addEventListener('pause', () => thumb.classList.remove('is-playing'));
 
-        thumb.addEventListener('click', () => {
+        const toggle = () => {
           if (!v.getAttribute('src')) {
             const dataSrc = v.dataset.src;
             if (dataSrc) { v.setAttribute('src', dataSrc); v.load(); }
@@ -288,6 +290,14 @@
             v.play().catch(() => {});
           } else {
             v.pause();
+          }
+        };
+
+        thumb.addEventListener('click', toggle);
+        thumb.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
           }
         });
       });
@@ -344,5 +354,5 @@
     boot();
   }
 
-  window.App = { Theme, I18n, Reveal, LazyVideo };
+  window.App = { Theme, I18n, Reveal, LazyVideo, prefersReducedMotion };
 })();

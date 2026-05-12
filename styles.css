@@ -1627,7 +1627,6 @@ footer .accent-text { color: var(--accent); font-size: 0.6rem; }
     max-height: 0;
     opacity: 0;
     pointer-events: none;
-    transition: max-height 0.4s var(--ease-out), opacity 0.3s;
     padding-top: 0;
     padding-bottom: 0;
     border-top: 1px solid transparent;
