@@ -1634,7 +1634,7 @@ footer .accent-text { color: var(--accent); font-size: 0.6rem; }
   }
 
   nav.open .nav-right {
-    max-height: 480px;
+    max-height: 600px;
     opacity: 1;
     pointer-events: auto;
     border-top-color: var(--border-soft);
@@ -1671,7 +1671,42 @@ footer .accent-text { color: var(--accent); font-size: 0.6rem; }
   .nav-right > .theme-toggle  { order: 3; margin-top: 0.5rem; }
   .nav-right > .nav-links     { order: 1; }
 
-  .lang-menu { right: 0; }
+  /* ── Mobile lang-switcher: inline layout, no absolute overflow clipping ── */
+  .lang-switcher {
+    position: static;
+    width: 100%;
+  }
+
+  .lang-trigger {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  .lang-menu {
+    position: static;
+    width: 100%;
+    min-width: unset;
+    right: auto;
+    top: auto;
+    margin-top: 0.35rem;
+    box-shadow: none;
+    border-radius: 6px;
+    /* Replace opacity/transform animation with max-height expand */
+    opacity: 1;
+    pointer-events: none;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s var(--ease-out);
+  }
+
+  .lang-switcher.open .lang-menu {
+    max-height: 200px;
+    pointer-events: auto;
+    transform: none;
+  }
 }
 
 /* ─── REDUCED MOTION ─── */
