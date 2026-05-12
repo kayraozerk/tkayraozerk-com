@@ -1550,6 +1550,29 @@ footer {
 }
 footer .accent-text { color: var(--accent); font-size: 0.6rem; }
 
+/* ─── THEME SWITCH FALLBACK (mobile / browsers without View Transitions API) ───
+   Applied for exactly 500ms via JS when startViewTransition is unavailable.
+   Adds smooth per-element transitions so the theme change isn't an instant snap.
+   !important is intentional — needs to override existing transition declarations
+   on each element for the brief window the class is active.
+   ─────────────────────────────────────────────────────────────────────────── */
+html.theme-switching body,
+html.theme-switching nav,
+html.theme-switching .motive-card,
+html.theme-switching .service-card,
+html.theme-switching .gallery-item,
+html.theme-switching .stat-item,
+html.theme-switching .contact-link,
+html.theme-switching .contact-form-wrap,
+html.theme-switching .lang-trigger,
+html.theme-switching .lang-menu,
+html.theme-switching .theme-toggle,
+html.theme-switching footer,
+html.theme-switching .form-group input,
+html.theme-switching .form-group textarea {
+  transition: background-color 0.45s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav { padding: 1rem 1.5rem; }
@@ -1671,9 +1694,11 @@ footer .accent-text { color: var(--accent); font-size: 0.6rem; }
   .nav-right > .theme-toggle  { order: 3; margin-top: 0.5rem; }
   .nav-right > .nav-links     { order: 1; }
 
-  /* ── Mobile lang-switcher: inline layout, no absolute overflow clipping ── */
+  /* ── Mobile lang-switcher: vertical accordion, no absolute positioning ── */
   .lang-switcher {
-    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
   }
 
@@ -1693,7 +1718,9 @@ footer .accent-text { color: var(--accent); font-size: 0.6rem; }
     margin-top: 0.35rem;
     box-shadow: none;
     border-radius: 6px;
-    /* Replace opacity/transform animation with max-height expand */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    /* Override desktop opacity/transform reveal with max-height accordion */
     opacity: 1;
     pointer-events: none;
     transform: none;

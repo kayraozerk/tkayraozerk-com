@@ -36,6 +36,14 @@
           this.syncToggle(theme);
         });
       } else {
+        if (animate && !prefersReducedMotion()) {
+          // Fallback for mobile / browsers without View Transitions (e.g., Safari).
+          // Add transition class first, force a synchronous style recalculation so
+          // the browser captures each element's "from" value, then change the theme.
+          root.classList.add('theme-switching');
+          void root.offsetHeight; // forces reflow — establishes the transition "from" state
+          setTimeout(() => root.classList.remove('theme-switching'), 500);
+        }
         root.setAttribute('data-theme', theme);
         this.syncToggle(theme);
       }
