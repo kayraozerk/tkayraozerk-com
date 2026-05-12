@@ -268,7 +268,34 @@
   };
 
   /* ════════════════════════════════════════════════
-     8. HAMBURGER — mobile nav toggle
+     8. VIDEO CLICK — click-to-play/pause for .video-thumb
+     ════════════════════════════════════════════════ */
+  const VideoClick = {
+    init() {
+      $$('.video-thumb').forEach(thumb => {
+        const v = thumb.querySelector('video');
+        if (!v) return;
+
+        v.addEventListener('play',  () => thumb.classList.add('is-playing'));
+        v.addEventListener('pause', () => thumb.classList.remove('is-playing'));
+
+        thumb.addEventListener('click', () => {
+          if (!v.getAttribute('src')) {
+            const dataSrc = v.dataset.src;
+            if (dataSrc) { v.setAttribute('src', dataSrc); v.load(); }
+          }
+          if (v.paused) {
+            v.play().catch(() => {});
+          } else {
+            v.pause();
+          }
+        });
+      });
+    }
+  };
+
+  /* ════════════════════════════════════════════════
+     9. HAMBURGER — mobile nav toggle
      ════════════════════════════════════════════════ */
   const Hamburger = {
     init() {
@@ -307,6 +334,7 @@
     Reveal.init();
     Magnetic.init();
     LazyVideo.init();
+    VideoClick.init();
     Hamburger.init();
   };
 

@@ -1110,6 +1110,7 @@ html[data-theme="dark"] .video-thumb::before {
   transition: transform 0.3s var(--ease-out), opacity 0.3s;
 }
 .video-thumb:hover .play-icon { opacity: 1; transform: scale(1.15); }
+.video-thumb.is-playing .play-icon { opacity: 0; }
 
 /* ─── CV PAGE ─── */
 .cv-container {
