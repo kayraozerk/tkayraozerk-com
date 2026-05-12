@@ -1715,7 +1715,12 @@ html.theme-switching .form-group textarea {
     min-width: unset;
     right: auto;
     top: auto;
-    margin-top: 0.35rem;
+    /* Zero out all box-model properties that produce a visible ghost outline
+       when the element is collapsed. Restored via .lang-switcher.open below. */
+    margin-top: 0;
+    border: none;
+    padding: 0;
+    min-height: 0;
     box-shadow: none;
     border-radius: 6px;
     backdrop-filter: none;
@@ -1733,6 +1738,10 @@ html.theme-switching .form-group textarea {
     max-height: 200px;
     pointer-events: auto;
     transform: none;
+    /* Restore visual styling once the menu actually opens */
+    border: 1px solid var(--border);
+    padding: 0.4rem;
+    margin-top: 0.35rem;
   }
 }
 
